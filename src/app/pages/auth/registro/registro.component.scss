@@ -1,0 +1,113 @@
+.contenedor {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    text-align: center;
+   
+    font-family: 'Barlow', sans-serif;
+}
+
+
+.titulo{
+    color: black;
+    font-size: 36px;
+}
+
+.registerForm {
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.717);
+    width: 400px;
+    height: 30rem;
+    padding: 35px;
+    background-color: #fafafb;
+    border-radius: 20px;
+
+
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+.registerForm .btnRegister {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #191939;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    margin-top: 25px;
+    border-radius: 15px;
+
+    font-weight: 600;
+}
+
+
+
+
+.registerForm .btnRegister:hover {
+    background-color: #2a1939
+
+}
+
+.registerForm .btnRegister:disabled{
+    background-color: #616161;
+    cursor: auto;
+}
+
+
+app-terms-and-conditions{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 100;
+}
+
+.terms{
+
+    color: black;
+    cursor: pointer;
+
+}
+
+.invalidTerms {
+    position: absolute;
+    color: rgb(255, 4, 4);
+    font-size: 1rem;
+}
+
+input:focus{
+    outline: none;
+}
+
+.tengoCuenta{
+    margin-top: 10px;
+}
+
+article{
+    width: 50%;
+    height: 100%;
+    background-image: url('Wallet-pana2.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+@media (max-width:750px) {
+    .contenedor{
+        margin-top: 90px;
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 30px;
+        height: auto;
+    }
+    
+}

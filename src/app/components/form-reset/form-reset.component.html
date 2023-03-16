@@ -1,0 +1,57 @@
+
+  <div class="div_container">
+   
+    <form [formGroup]="validateForm" class="form_reset" >
+      <div mat-dialog-content class="input-container">
+
+        <mat-form-field appearance="fill">
+          <mat-label for="email">Correo Electronico</mat-label>
+          <input matInput formControlName="email" required
+            type="email" required="email" name="email"
+             placeholder="Enter Email">
+          <mat-error  *ngIf="validateForm.controls['email'].touched 
+          && validateForm.controls['email'].errors">
+            {{ getErrorMessage('email') }}
+          </mat-error>
+        </mat-form-field>
+
+<div>
+        <mat-icon class="icon_eye" (click)="togglePasswordVisibility()" >
+          {{passwordVisibility ? 'visibility' : 'visibility_off'}}
+        </mat-icon>
+        <mat-form-field appearance="fill">
+          <mat-label for="password">Contraseña</mat-label>
+          <input matInput formControlName="password"
+            [type]="passwordVisibility ? 'text' : 'password'"
+            placeholder="Enter password">
+          
+          <mat-error *ngIf="validateForm.controls['password'].touched
+          && validateForm.controls['password'].errors">
+            {{ getErrorMessage('password') }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+        <mat-form-field appearance="fill">
+          <mat-label for="password2">Confirme su Contraseña</mat-label>
+          <input matInput formControlName="password2"
+            [type]="passwordVisibility ? 'text' : 'password'"
+             placeholder="Repeat password"
+          >
+          <mat-error *ngIf="validateForm.controls['password2'].touched
+          && validateForm.controls['password2'].errors">
+            {{ getErrorMessage('password2') }}
+          </mat-error>
+        </mat-form-field>
+
+        </div>
+        
+        <div mat-dialog-actions>
+          <button mat-button class="close_modal" (click)="closeModal()">Cancelar</button>
+          <button mat-raised-button color="accent" class="btn_submit" [mat-dialog-close]="data" (click)="submitForm()" [disabled]="!validateForm.valid"
+           type="submit">Aceptar</button>
+        </div>
+        
+      </form>
+     
+  </div>
